@@ -3,16 +3,16 @@ namespace Decorator;
 
 
 require_once 'Decorador.class.php';
-require_once 'ComponenteGraficoVehiculo.class.php';
+require_once 'Notificacion.class.php';
 
 class ModeloDecorador extends Decorador
 {
 
     /**
      *
-     * @param ComponenteGraficoVehiculo $componente            
+     * @param Decorador $componente            
      */
-    public function __construct(ComponenteGraficoVehiculo $componente)
+    public function __construct(Decorador $componente)
     {
         parent::__construct($componente);
     }

@@ -5,6 +5,10 @@ namespace Adapter;
 
 class informacionCliente
 {
+    //protected $contenido;
+    //public function clienteFijaContenido($contenido){
+    //  $this->contenido = $contenido;
+    //}
     /**
      * 
      * @var string
@@ -44,7 +48,17 @@ class informacionCliente
         $this->fecha =$fecha;
         $this->hora =$hora;
     }
-
+/*
+    public function mostrarCliente()
+    {
+        return array(
+            'Datos cliente' => "CLIENTE",
+            'Texto' => $this->contenido
+        
+        );
+        
+    }
+*/
     public function mostrarCliente()
     {
         return array(

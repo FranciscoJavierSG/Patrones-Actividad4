@@ -1,7 +1,7 @@
 <?php
 namespace Decorator;
 
-interface ComponenteGraficoVehiculo
+interface Notificacion
 {
     function muestra();
 }

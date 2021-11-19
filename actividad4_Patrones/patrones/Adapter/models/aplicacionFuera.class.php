@@ -11,7 +11,9 @@ class aplicacionFuera implements Notificacion
      * @var informacionCliente
      */
     protected $infoCliente;
-
+    //habra que pasarle estas variables  en vola..
+    //Si no contenido podria ser un array que tenga todo esto.
+    //$estadoNotificacion,$duracion,$color,$prioridad, $titulo, $descripcion, $ip, $sistema_operativo, $fecha, $hora
     public function __construct()
     {
         $this->infoCliente = new informacionCliente();
@@ -21,12 +23,15 @@ class aplicacionFuera implements Notificacion
      *
      * @param string $contenido            
      */
+    //definir contenido
     public function setContenido($contenido)
     {
         $this->infoCliente->clienteFijaContenido($contenido);
     }
 
-    public function mostrarCliente(){}
+    public function mostrarCliente($contenido){
+        $this->infoCliente->mostrarCliente($contenido);
+    }
 
 }
 

@@ -3,7 +3,8 @@ namespace Adapter;
 
 interface Notificacion
 {
-
+    //esto es una forma
+    //function llamarNotificacion($contenido);
     /**
      *
      * @param string $estadoNotificacion

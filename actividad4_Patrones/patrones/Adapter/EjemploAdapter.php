@@ -3,7 +3,7 @@
 namespace Adapter;
 
 use Exception;
-
+//Hay que manosear esto aun
 
 require_once 'models/DocumentoHtml.class.php';
 require_once 'models/DocumentoPdf.class.php';

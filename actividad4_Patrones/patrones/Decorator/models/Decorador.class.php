@@ -1,21 +1,21 @@
 <?php
 namespace Decorator;
 
-require_once 'ComponenteGraficoVehiculo.class.php';
+require_once 'Notificacion.class.php';
 
-abstract class Decorador implements ComponenteGraficoVehiculo
+abstract class Decorador implements Notificacion
 {
     /**
      * 
-     * @var ComponenteGraficoVehiculo
+     * @var Decorador
      */
     public $componente;
     
     /**
      *
-     * @param ComponenteGraficoVehiculo $componente            
+     * @param Decorador $componente            
      */
-    public function __construct(ComponenteGraficoVehiculo $componente)
+    public function __construct(Decorador $componente)
     {
         $this->componente = $componente;
     }

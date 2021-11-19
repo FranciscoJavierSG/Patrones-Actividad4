@@ -27,7 +27,11 @@ class informacionCliente
      * @param string $fecha
      * @param string $hora      
      */
-    public function clienteFijaContenido($estadoNotificacion,$duracion,$color,$prioridad, $titulo, $descripcion)
+    protected $ip;
+    protected $sistema_operativo;
+    protected $fecha;
+    protected $hora;
+    public function clienteFijaContenido($estadoNotificacion,$duracion,$color,$prioridad, $titulo, $descripcion, $ip, $sistema_operativo, $fecha, $hora)
     {
         $this->estadoNotificacion = $estadoNotificacion;
         $this->duracion =$duracion;
@@ -35,50 +39,32 @@ class informacionCliente
         $this->prioridad =$prioridad;
         $this->titulo =$titulo;
         $this->descripcion =$descripcion;
+        $this->ip =$ip;
+        $this->sistema_operativo =$sistema_operativo;
+        $this->fecha =$fecha;
+        $this->hora =$hora;
     }
 
     public function mostrarCliente()
     {
         return array(
-            'IP de cliente' =>  "PDF",
-            'Sistema operativo' =>  "Inicio",
+            'Datos cliente' => "CLIENTE",
+            'IP de cliente' =>  $this->ip,
+            'Sistema operativo' =>  $this->sistema_operativo,
             'Fecha' =>  $this->contenido,
-            'Hora'
+            'Hora' => $this->hora,
+            'Notificacion' => "Datos de notificacion",
+            'Estado de notificacion' => $this->estadoNotificacion,
+            'Duracion' => $this->duracion,
+            'Color' => $this->color,
+            'Prioridad'=> $this->prioridad,
+            'Titulo' => $this->titulo,
+            'Descripcion' => $this->descripcion
         
         );
         
     }
 
-    public function pdfRefresca()
-    {
-      
-                return array(
-                    'Muestra contenido documento' =>  "PDF",
-                    'Estado' =>  "Muestra",
-                    'contenido' =>  $this->contenido,
-                
-                );
-    }
-
-    public function pdfTerminaMuestra()
-    {
-      
-        return array(
-            'Muestra contenido documento' =>  "PDF",
-            'contenido' =>  $this->contenido,
-        
-        );
-    }
-
-    public function pdfEnviaImpresora()
-    {
-    
-        return array(
-            'impresion contenido documento' =>  "PDF",
-            'contenido' =>  $this->contenido,
-        
-        );
-    }
 }
 
 ?>

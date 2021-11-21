@@ -4,9 +4,9 @@ namespace Decorator;
 
 use Exception;
 
-require_once 'models/VistaVehiculo.class.php';
-require_once 'models/ModeloDecorador.class.php';
-require_once 'models/MarcaDecorador.class.php';
+require_once 'models/Notificacion.class.php';
+require_once 'models/DecoradorNotificacion.class.php';
+
 
 class EjemploDecorator
 {
@@ -24,20 +24,14 @@ class EjemploDecorator
         try {
 
           
-
-            $vistaVehiculo = new VistaVehiculo();
-        
-            $modeloDecorador = new ModeloDecorador($vistaVehiculo);
+            $notificacion = new Notificacion();
+            $decoradorNotificacion = new DecoradorNotificacion($notificacion);
   
-            $marcaDecorador = new MarcaDecorador($modeloDecorador);
-    
-
-
-            $r= $marcaDecorador->muestra();
+            
+            $r= $decoradorNotificacion->muestra();
             
         
            
-          
             $respuesta = array('Estado' => "success",
                 'Response' => $r);
             return $respuesta;
@@ -49,3 +43,4 @@ class EjemploDecorator
     }
 
 }
+

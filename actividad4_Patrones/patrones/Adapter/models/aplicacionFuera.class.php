@@ -1,7 +1,7 @@
 <?php
 namespace Adapter;
 
-require_once 'notificacion.class.php';
+require_once 'Notificacion.class.php';
 require_once 'informacionCliente.class.php';
 
 class aplicacionFuera implements Notificacion
@@ -22,13 +22,14 @@ class aplicacionFuera implements Notificacion
      * @param string $contenido            
      */
     //definir contenido
-    public function llamarNotificacion($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion,$ip,$sistema_operativo,$fecha,$hora)
+    public function llamarNotificacion($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion)
     {
-        $this->infoCliente->clienteFijaContenido($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion,$ip,$sistema_operativo,$fecha,$hora);
+        $this->infoCliente->clienteFijaContenido($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion);
     }
 
     public function mostrar(){
         $this->infoCliente->mostrarCliente();
+        return $this->infoCliente->mostrarCliente();
     }
 
 }

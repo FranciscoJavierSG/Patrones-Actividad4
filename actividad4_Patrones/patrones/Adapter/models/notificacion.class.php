@@ -12,8 +12,10 @@ interface Notificacion
      * @param string $color
      * @param string $prioridad
      * @param string $titulo
-     * @param string $descripcion            
+     * @param string $descripcion           
      */
     function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
+    
+    function mostrar();
 
 }

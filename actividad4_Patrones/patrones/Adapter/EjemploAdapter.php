@@ -5,16 +5,22 @@ namespace Adapter;
 use Exception;
 //Hay que manosear esto aun
 
-require_once 'models/DocumentoHtml.class.php';
-require_once 'models/DocumentoPdf.class.php';
+require_once 'models/aplicacionFuera.class.php';
+require_once 'models/aplicacionEmpresa.class.php';
 
 class EjemploAdapter
 {
     public $opcion;
-    public $texto;
+    public $estadoNotificacion;
+    public $duracion;
+    public $prioridad;
+    public $titulo;
+    public $descripcion;
+   
+    
 
 
-    public function __construct($opcion,$texto)
+    public function __construct($opcion,$estadoNotificacion, $duracion,$prioridad,$titulo,$descripcion)
     {
 
         $this->opcion = $opcion;
@@ -24,28 +30,22 @@ class EjemploAdapter
         $this->titulo = $titulo;
         $this->descripcion = $descripcion;
 
-        $this->ip = $ip;
-        $this->sistema_operativo = $sistema_operativo;
-        $this->fecha = $fecha;
-        $this->hora = $hora;
+        
        
     }
 
     public function generar()
     {
+      
         try {
 
             switch ($this->opcion) {
-                case 1:
+                case 1:                
                     $notificacion = new aplicacionEmpresa();
-                    $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->prioridad,$this->titulo,
-                        $this->descripcion);
-                    
+
                     break;
                 case 2:
                     $notificacion = new aplicacionFuera();
-                    $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->prioridad,$this->titulo,
-                        $this->descripcion,$this->ip,$this->sistema_operativo,$this->fecha, $this->hora);
                     break;
                 default:
                     throw new \Exception("Opción ".$this->opcion." desconocida --Opciones disponibles:: opc 1: Documentohtml -opc 2: DocumentoPdf ");
@@ -53,7 +53,9 @@ class EjemploAdapter
             }
 
             
-
+            //esto ta armando dramas
+            $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->prioridad,$this->titulo,$this->descripcion);
+            
             $r=$notificacion->mostrar();
 
            

@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 require_once './patrones/Adapter/EjemploAdapter.php';
-//require_once './patrones/Decorator/EjemploDecorator.php';
+require_once './patrones/Decorator/EjemploDecorator.php';
 use Adapter\EjemploAdapter;
-//use Decorator\EjemploDecorator;
+use Decorator\EjemploDecorator;
 
 
 
@@ -19,7 +19,6 @@ class apiPatrones
                 break;
                 break;
             case 'POST': //actualiza
-                
                 $this->EjemplosPatrones();
                 break;
             case 'PUT': //inserta
@@ -72,7 +71,7 @@ class apiPatrones
         }
 
 
-        /*if ($_GET['action'] == 'EjemploDecorator') {
+        if ($_GET['action'] == 'EjemploDecorator') {
             $obj = json_decode(file_get_contents('php://input'));
             $objArr = (array) $obj;
             if (!empty($objArr)) {
@@ -91,7 +90,7 @@ class apiPatrones
             }
 
             exit;
-        }*/
+        }
 
 
 

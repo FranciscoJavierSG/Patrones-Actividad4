@@ -7,15 +7,15 @@ abstract class Decorador implements Notificacion
 {
     /**
      * 
-     * @var Decorador
+     * @var Notificacion
      */
     public $componente;
     
     /**
      *
-     * @param Decorador $componente            
+     * @param Notificacion $componente            
      */
-    public function __construct(Decorador $componente)
+    public function __construct(Notificacion $componente)
     {
         $this->componente = $componente;
     }

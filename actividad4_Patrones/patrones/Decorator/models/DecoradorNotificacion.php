@@ -10,24 +10,25 @@ class ModeloDecorador extends Decorador
 
     /**
      *
-     * @param Decorador $componente            
+     * @param Notificacion $componente            
      */
-    public function __construct(Decorador $componente)
+    public function __construct(Notificacion $componente)
     {
         parent::__construct($componente);
     }
 
-    public function muestraInfosTecnicas()
+    public function muestraLogo()
     {
-       return 'Informaci�n tecnica del modelo';
+        return 'Logo de la marca';
     }
 
     public function muestra()
     {
     
-        return  array('MuestraDecorador' =>  parent::muestra(),
-        'MuestraInfosTecnicas' => $this->muestraInfosTecnicas());
+        return  array('Muestra' =>  parent::muestra(),
+        'MuestraLogo' => $this->muestraLogo());
     }
 }
 
 ?>
+

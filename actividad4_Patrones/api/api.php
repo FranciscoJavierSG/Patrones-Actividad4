@@ -60,7 +60,9 @@ class apiPatrones
                 $this->response(200, "Error000", "No se agrego JSON");
             } else {
 
-                $ejemplo = new EjemploAdapter($obj->opcion, $obj->texto);
+                $ejemplo = new EjemploAdapter($obj->opcion, $obj->estadoNotificacion, 
+                    $obj->duracion,$obj->color,$obj->prioridad,$obj->titulo,$obj->descripcion,
+                    $obj->ip,$obj->sistema_operativo,$obj->fecha,$obj->hora);
                 $respuesta = $ejemplo->generar();
                 // var_dump($respuesta);
                 if ($respuesta['Estado'] == 'success') {

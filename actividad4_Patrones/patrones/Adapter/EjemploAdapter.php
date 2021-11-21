@@ -18,8 +18,17 @@ class EjemploAdapter
     {
 
         $this->opcion = $opcion;
-        $this->texto = $texto;
-     
+        $this->estadoNotificacion = $estadoNotificacion;
+        $this->duracion = $duracion;
+        $this->prioridad = $prioridad;
+        $this->titulo = $titulo;
+        $this->descripcion = $descripcion;
+
+        $this->ip = $ip;
+        $this->sistema_operativo = $sistema_operativo;
+        $this->fecha = $fecha;
+        $this->hora = $hora;
+       
     }
 
     public function generar()
@@ -28,19 +37,24 @@ class EjemploAdapter
 
             switch ($this->opcion) {
                 case 1:
-                    $documento = new Documentohtml();
+                    $notificacion = new aplicacionEmpresa();
+                    $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->prioridad,$this->titulo,
+                        $this->descripcion);
+                    
                     break;
                 case 2:
-                    $documento = new DocumentoPdf();
+                    $notificacion = new aplicacionFuera();
+                    $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->prioridad,$this->titulo,
+                        $this->descripcion,$this->ip,$this->sistema_operativo,$this->fecha, $this->hora);
                     break;
                 default:
-
                     throw new \Exception("Opción ".$this->opcion." desconocida --Opciones disponibles:: opc 1: Documentohtml -opc 2: DocumentoPdf ");
 
             }
 
-            $documento->setContenido($this->texto);
-            $r=$documento->dibuja();
+            
+
+            $r=$notificacion->mostrar();
 
            
           

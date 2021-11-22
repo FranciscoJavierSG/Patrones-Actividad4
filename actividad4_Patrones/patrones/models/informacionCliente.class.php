@@ -2,7 +2,8 @@
 namespace Notificaciones;
 
 
-
+require_once 'TipoPrioridad.php';
+require_once 'EstadoNotificacion.php';
 class informacionCliente
 {
     //protected $contenido;
@@ -40,10 +41,10 @@ class informacionCliente
             'Fecha' =>  "21/11/2021",
             'Hora' => "18:00",
             'Notificacion' => "Datos de notificacion",
-            'Estado de notificacion' => $this->estadoNotificacion,
+            'EstadoNotificacion' => $this->estadoNotificacion = EstadoNotificacion::setEstadoNotificacion($this->estadoNotificacion),
             'Duracion' => $this->duracion,
             'Color' => $this->color,
-            'Prioridad'=> $this->prioridad,
+            'Prioridad' => $this->prioridad = TipoPrioridad::setTipoPrioridad($this->prioridad),
             'Titulo' => $this->titulo,
             'Descripcion' => $this->descripcion
         

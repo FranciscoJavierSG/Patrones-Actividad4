@@ -4,6 +4,9 @@ namespace Notificaciones;
 require_once 'Notificacion.class.php';
 require_once 'informacionCliente.class.php';
 
+require_once 'TipoPrioridad.php';
+require_once 'EstadoNotificacion.php';
+
 class aplicacionFuera extends Notificacion
 {
     /**

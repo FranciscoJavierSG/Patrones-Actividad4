@@ -39,7 +39,7 @@ class aplicacionEmpresa extends Notificacion {
 
     public function mostrar() {
         return array(
-            'EstadoNotificacion' => $this->estadoNotificacion = EstadoNotificacion::setEstadoNotificacion($this->estado),
+            'EstadoNotificacion' => $this->estadoNotificacion = EstadoNotificacion::setEstadoNotificacion($this->estadoNotificacion),
             'Duracion' => $this->duracion,
             'Color' => $this->color,
             'Prioridad' => $this->prioridad = TipoPrioridad::setTipoPrioridad($this->prioridad),

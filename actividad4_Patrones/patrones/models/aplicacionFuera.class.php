@@ -31,7 +31,6 @@ class aplicacionFuera extends Notificacion
     }
 
     public function mostrar(){
-        $this->infoCliente->mostrarCliente();
         return $this->infoCliente->mostrarCliente();
     }
 

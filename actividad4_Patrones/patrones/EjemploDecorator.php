@@ -4,6 +4,7 @@ namespace Notificaciones;
 
 use Exception;
 
+require_once 'models/VistaNotificacion.class.php';
 require_once 'models/Notificacion.class.php';
 require_once 'models/DecoradorNotificacion.class.php';
 
@@ -16,25 +17,24 @@ class EjemploDecorator
     public function __construct()
     {
 
-     
+
     }
 
     public function generar()
     {
-        
+
         try {
 
-          
-            $notificacion = new Notificacion();
 
+            $vistaNotificacion = new VistaNotificacion();
+            
+            $decoradorNotificacion = new DecoradorNotificacion($VistaNotificacion);
             echo 'alo';
-            $decoradorNotificacion = new DecoradorNotificacion($notificacion);
-  
-            
+
             $r= $decoradorNotificacion->muestra();
-            
-        
-           
+
+
+
             $respuesta = array('Estado' => "success",
                 'Response' => $r);
             return $respuesta;
@@ -46,4 +46,3 @@ class EjemploDecorator
     }
 
 }
-

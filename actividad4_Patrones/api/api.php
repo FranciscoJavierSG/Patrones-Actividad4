@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 require_once './patrones/EjemploAdapter.php';
-//require_once './patrones/EjemploDecorator.php';
+require_once './patrones/EjemploDecorator.php';
 use Notificaciones\EjemploAdapter;
-//use Notificaciones\EjemploDecorator;
+use Notificaciones\EjemploDecorator;
 
 
 
@@ -70,7 +70,7 @@ class apiPatrones
             exit;
         }
 
-        /*
+        
         if ($_GET['action'] == 'EjemploDecorator') {
             $obj = json_decode(file_get_contents('php://input'));
             $objArr = (array) $obj;
@@ -91,7 +91,7 @@ class apiPatrones
 
             exit;
         }
-        */
+        
 
 
         $this->response(400);

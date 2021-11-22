@@ -4,7 +4,7 @@ namespace Notificaciones;
 
 require_once 'Notificacion.class.php';
 
-class aplicacionEmpresa implements Notificacion {
+class aplicacionEmpresa extends Notificacion {
     /**
      * 
      * @var string

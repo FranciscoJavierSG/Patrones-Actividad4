@@ -55,6 +55,7 @@ class EjemploAdapter
 
             }
 
+            
             //esto ta armando dramas
             $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->color,$this->prioridad,$this->titulo,$this->descripcion);
             

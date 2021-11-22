@@ -8,8 +8,7 @@ use Exception;
 require_once 'models/aplicacionFuera.class.php';
 require_once 'models/aplicacionEmpresa.class.php';
 
-class EjemploAdapter
-{
+class EjemploAdapter {
     public $opcion;
     public $estadoNotificacion;
     public $duracion;
@@ -17,12 +16,8 @@ class EjemploAdapter
     public $prioridad;
     public $titulo;
     public $descripcion;
-   
-    
 
-
-    public function __construct($opcion,$estadoNotificacion,$color, $duracion,$prioridad,$titulo,$descripcion)
-    {
+    public function __construct($opcion, $estadoNotificacion, $color, $duracion, $prioridad, $titulo, $descripcion) {
 
         $this->opcion = $opcion;
         $this->estadoNotificacion = $estadoNotificacion;
@@ -31,46 +26,40 @@ class EjemploAdapter
         $this->prioridad = $prioridad;
         $this->titulo = $titulo;
         $this->descripcion = $descripcion;
-
-        
-       
     }
 
-    public function generar()
-    {
+    public function generar() {
         try {
 
             switch ($this->opcion) {
-                case 1:                
+                case 1:
                     $notificacion = new aplicacionEmpresa();
-                    
-
                     break;
+
                 case 2:
                     $notificacion = new aplicacionFuera();
-                    
                     break;
-                default:
-                    throw new \Exception("Opción ".$this->opcion." desconocida --Opciones disponibles:: opc 1: Documentohtml -opc 2: DocumentoPdf ");
 
+                default:
+                    throw new \Exception("Opción " . $this->opcion . " desconocida --Opciones disponibles:: opc 1: Documentohtml -opc 2: DocumentoPdf ");
             }
 
-            
             //esto ta armando dramas
-            $notificacion->llamarNotificacion($this->estadoNotificacion,$this->duracion,$this->color,$this->prioridad,$this->titulo,$this->descripcion);
-            
-            $r=$notificacion->mostrar();
+            $notificacion->llamarNotificacion($this->estadoNotificacion, $this->duracion, $this->color, $this->prioridad, $this->titulo, $this->descripcion);
 
-           
-          
-            $respuesta = array('Estado' => "success",
-                'Response' => $r);
+            $r = $notificacion->mostrar();
+
+            $respuesta = array(
+                'Estado' => "success",
+                'Response' => $r
+            );
             return $respuesta;
         } catch (Exception $e) {
-            $respuesta = array('Estado' => "Error",
-                'Response' => $e->getMessage());
+            $respuesta = array(
+                'Estado' => "Error",
+                'Response' => $e->getMessage()
+            );
             return $respuesta;
         }
     }
-
 }

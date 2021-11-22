@@ -8,41 +8,32 @@ require_once 'models/VistaNotificacion.class.php';
 require_once 'models/Notificacion.class.php';
 require_once 'models/DecoradorNotificacion.class.php';
 
+class EjemploDecorator {
 
-class EjemploDecorator
-{
-
-
-
-    public function __construct()
-    {
-
-
+    public function __construct() {
     }
 
-    public function generar()
-    {
+    public function generar() {
 
         try {
 
-
             $vistaNotificacion = new VistaNotificacion();
-            
-            $decoradorNotificacion = new DecoradorNotificacion($VistaNotificacion);
-            echo 'alo';
 
-            $r= $decoradorNotificacion->muestra();
+            $decoradorNotificacion = new DecoradorNotificacion($vistaNotificacion);
 
+            $r = $decoradorNotificacion->mostrar();
 
-
-            $respuesta = array('Estado' => "success",
-                'Response' => $r);
+            $respuesta = array(
+                'Estado' => "success",
+                'Response' => $r
+            );
             return $respuesta;
         } catch (Exception $e) {
-            $respuesta = array('Estado' => "Error",
-                'Response' => $e->getMessage());
+            $respuesta = array(
+                'Estado' => "Error",
+                'Response' => $e->getMessage()
+            );
             return $respuesta;
         }
     }
-
 }

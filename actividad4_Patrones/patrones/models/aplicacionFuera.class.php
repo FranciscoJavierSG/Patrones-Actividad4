@@ -24,7 +24,7 @@ class aplicacionFuera extends Notificacion
     //definir contenido
     public function llamarNotificacion($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion)
     {
-        $this->infoCliente->clienteFijaContenido($estadoNotificacion, $duracion,$color, $prioridad, $titulo, $descripcion);
+        $this->infoCliente->clienteFijaContenido($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
     }
 
     public function mostrar(){

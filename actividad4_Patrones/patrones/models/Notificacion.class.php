@@ -15,7 +15,12 @@ abstract class Notificacion {
      * @param string $descripcion           
      */
     
-    function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion){}
+    function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion){
 
-    function mostrar(){}
+    }
+
+    function mostrar(){
+
+    }
+    
 }

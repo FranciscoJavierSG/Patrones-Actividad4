@@ -3,6 +3,8 @@
 namespace Notificaciones;
 
 require_once 'Notificacion.class.php';
+require_once 'TipoPrioridad.php';
+require_once 'EstadoNotificacion.php';
 
 class aplicacionEmpresa extends Notificacion {
     /**
@@ -25,6 +27,7 @@ class aplicacionEmpresa extends Notificacion {
      * @param string $titulo
      * @param string $descripcion            
      */
+
     public function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion) {
         $this->estadoNotificacion = $estadoNotificacion;
         $this->duracion = $duracion;
@@ -36,10 +39,10 @@ class aplicacionEmpresa extends Notificacion {
 
     public function mostrar() {
         return array(
-            'EstadoNotificacion' => $this->estadoNotificacion,
+            'EstadoNotificacion' => $this->estadoNotificacion = EstadoNotificacion::setEstadoNotificacion($this->estado),
             'Duracion' => $this->duracion,
             'Color' => $this->color,
-            'Prioridad' => $this->prioridad,
+            'Prioridad' => $this->prioridad = TipoPrioridad::setTipoPrioridad($this->prioridad),
             'Titulo' => $this->titulo,
             'Descripcion' => $this->descripcion
         );

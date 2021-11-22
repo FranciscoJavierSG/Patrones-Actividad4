@@ -4,7 +4,7 @@ namespace Notificaciones;
 
 require_once 'Notificacion.class.php';
 
-class VistaNotificacion implements Notificacion {
+class VistaNotificacion extends Notificacion {
 
     public function mostrar() {
         return 'Muestra de la notificación';

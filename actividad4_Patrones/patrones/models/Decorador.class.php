@@ -4,7 +4,7 @@ namespace Notificaciones;
 
 require_once 'Notificacion.class.php';
 
-abstract class Decorador implements Notificacion {
+abstract class Decorador extends Notificacion {
     /**
      * 
      * @var Notificacion

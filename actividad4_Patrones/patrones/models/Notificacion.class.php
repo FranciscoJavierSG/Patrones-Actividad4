@@ -2,7 +2,7 @@
 
 namespace Notificaciones;
 
-interface Notificacion {
+abstract class Notificacion {
     //esto es una forma
     //function llamarNotificacion($contenido);
     /**
@@ -15,7 +15,7 @@ interface Notificacion {
      * @param string $descripcion           
      */
     
-    //function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
+    function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion){}
 
-    function mostrar();
+    function mostrar(){}
 }

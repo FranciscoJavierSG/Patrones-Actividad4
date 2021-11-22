@@ -1,8 +1,8 @@
 <?php
+
 namespace Notificaciones;
 
-interface Notificacion
-{
+interface Notificacion {
     //esto es una forma
     //function llamarNotificacion($contenido);
     /**
@@ -14,10 +14,8 @@ interface Notificacion
      * @param string $titulo
      * @param string $descripcion           
      */
-    function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
     
+    //function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
+
     function mostrar();
-
-    
-
 }

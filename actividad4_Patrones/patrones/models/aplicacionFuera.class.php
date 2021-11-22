@@ -33,5 +33,3 @@ class aplicacionFuera implements Notificacion
     }
 
 }
-
-?>

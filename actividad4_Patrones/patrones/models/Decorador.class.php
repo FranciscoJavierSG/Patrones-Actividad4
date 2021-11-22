@@ -17,7 +17,6 @@ abstract class Decorador extends Notificacion {
      * @param Notificacion $componente            
      */
 
-
     public function __construct(Notificacion $componente) {
         $this->componente = $componente;
     }

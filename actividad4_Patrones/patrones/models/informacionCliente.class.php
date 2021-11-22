@@ -1,15 +1,12 @@
 <?php
+
 namespace Notificaciones;
 
 
 require_once 'TipoPrioridad.php';
 require_once 'EstadoNotificacion.php';
-class informacionCliente
-{
-    //protected $contenido;
-    //public function clienteFijaContenido($contenido){
-    //  $this->contenido = $contenido;
-    //}
+class informacionCliente {
+
     /**
      * 
      * @var string
@@ -21,19 +18,17 @@ class informacionCliente
     protected $titulo;
     protected $descripcion;
 
-    
-    public function clienteFijaContenido($estadoNotificacion,$duracion,$color,$prioridad, $titulo, $descripcion)
-    {
+
+    public function clienteFijaContenido($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion) {
         $this->estadoNotificacion = $estadoNotificacion;
-        $this->duracion =$duracion;
+        $this->duracion = $duracion;
         $this->color = $color;
-        $this->prioridad =$prioridad;
-        $this->titulo =$titulo;
-        $this->descripcion =$descripcion;
+        $this->prioridad = $prioridad;
+        $this->titulo = $titulo;
+        $this->descripcion = $descripcion;
     }
 
-    public function mostrarCliente()
-    {
+    public function mostrarCliente() {
         return array(
             'Datos cliente' => "CLIENTE",
             'IP de cliente' =>  "168.192.168.0.1",
@@ -47,9 +42,7 @@ class informacionCliente
             'Prioridad' => $this->prioridad = TipoPrioridad::setTipoPrioridad($this->prioridad),
             'Titulo' => $this->titulo,
             'Descripcion' => $this->descripcion
-        
-        );
-        
-    }
 
+        );
+    }
 }

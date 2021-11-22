@@ -8,7 +8,7 @@ class TipoPrioridad {
         if ($prioridad <= 1) {
             return 'Baja';
         }
-        if ($prioridad == 2){
+        if ($prioridad == 2) {
             return 'Media';
         }
         if ($prioridad >= 3) {

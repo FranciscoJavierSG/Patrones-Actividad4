@@ -1,7 +1,7 @@
 <?php
 namespace Adapter;
 
-require_once 'notificacion.class.php';
+require_once 'Notificacion.class.php';
 
 class aplicacionEmpresa implements Notificacion
 {
@@ -18,7 +18,12 @@ class aplicacionEmpresa implements Notificacion
 
     /**
      *
-     * @param string $contenido            
+     * @param string $estadoNotificacion
+     * @param string $duracion
+     * @param string $color
+     * @param string $prioridad
+     * @param string $titulo
+     * @param string $descripcion            
      */
     public function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion)
     {

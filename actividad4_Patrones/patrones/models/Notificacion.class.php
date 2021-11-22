@@ -1,5 +1,5 @@
 <?php
-namespace Adapter;
+namespace Notificaciones;
 
 interface Notificacion
 {
@@ -12,8 +12,12 @@ interface Notificacion
      * @param string $color
      * @param string $prioridad
      * @param string $titulo
-     * @param string $descripcion            
+     * @param string $descripcion           
      */
     function llamarNotificacion($estadoNotificacion, $duracion, $color, $prioridad, $titulo, $descripcion);
+    
+    function mostrar();
+
+    
 
 }

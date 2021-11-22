@@ -1,14 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-
-
-require_once './patrones/Adapter/EjemploAdapter.php';
-require_once './patrones/Decorator/EjemploDecorator.php';
-
-
-
-use Adapter\EjemploAdapter;
-use Decorator\EjemploDecorator;
+require_once './patrones/EjemploAdapter.php';
+//require_once './patrones/EjemploDecorator.php';
+use Notificaciones\EjemploAdapter;
+//use Notificaciones\EjemploDecorator;
 
 
 
@@ -50,8 +45,8 @@ class apiPatrones
 
     public function EjemplosPatrones()
     {
-
-       
+        
+   
 
         if ($_GET['action'] == 'EjemploAdapter') {
             $obj = json_decode(file_get_contents('php://input'));
@@ -60,7 +55,8 @@ class apiPatrones
                 $this->response(200, "Error000", "No se agrego JSON");
             } else {
 
-                $ejemplo = new EjemploAdapter($obj->opcion, $obj->texto);
+                $ejemplo = new EjemploAdapter($obj->opcion, $obj->estadoNotificacion, 
+                    $obj->duracion,$obj->color,$obj->prioridad,$obj->titulo,$obj->descripcion);
                 $respuesta = $ejemplo->generar();
                 // var_dump($respuesta);
                 if ($respuesta['Estado'] == 'success') {
@@ -74,7 +70,7 @@ class apiPatrones
             exit;
         }
 
-
+        /*
         if ($_GET['action'] == 'EjemploDecorator') {
             $obj = json_decode(file_get_contents('php://input'));
             $objArr = (array) $obj;
@@ -95,7 +91,7 @@ class apiPatrones
 
             exit;
         }
-
+        */
 
 
         $this->response(400);

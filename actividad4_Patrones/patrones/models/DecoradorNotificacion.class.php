@@ -1,18 +1,24 @@
 <?php
-namespace Decorator;
+
+/*
+HAY QUE DESCOMENTARLO ANTES DE USARLO
+*/
+namespace Notificaciones;
 
 
 require_once 'Decorador.class.php';
 require_once 'Notificacion.class.php';
 
-class ModeloDecorador extends Decorador
+class DecoradorNotificacion extends Decorador
 {
 
     /**
      *
      * @param Notificacion $componente            
      */
-    public function __construct(Notificacion $componente)
+  
+  
+     public function __construct(Notificacion $componente)
     {
         parent::__construct($componente);
     }
@@ -22,10 +28,10 @@ class ModeloDecorador extends Decorador
         return 'Logo de la marca';
     }
 
-    public function muestra()
+    public function mostrar()
     {
     
-        return  array('Muestra' =>  parent::muestra(),
+        return  array('Muestra' =>  parent::mostrar(),
         'MuestraLogo' => $this->muestraLogo());
     }
 }

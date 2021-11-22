@@ -1,6 +1,6 @@
 <?php
 
-namespace Decorator;
+namespace Notificaciones;
 
 use Exception;
 
@@ -21,10 +21,13 @@ class EjemploDecorator
 
     public function generar()
     {
+        
         try {
 
           
             $notificacion = new Notificacion();
+
+            echo 'alo';
             $decoradorNotificacion = new DecoradorNotificacion($notificacion);
   
             

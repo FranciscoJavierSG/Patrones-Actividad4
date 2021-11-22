@@ -1,5 +1,7 @@
 <?php
 
+namespace Notificaciones;
+
 class EstadoNotificacion {
 
     public static function setEstadoNotificacion($estado) {

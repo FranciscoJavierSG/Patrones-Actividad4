@@ -1,6 +1,8 @@
 <?php
 
-class EstadoNotificacion {
+namespace Notificaciones;
+
+class TipoPrioridad {
 
     public static function setTipoPrioridad($prioridad) {
         if ($prioridad <= 1) {

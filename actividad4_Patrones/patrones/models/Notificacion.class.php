@@ -3,8 +3,7 @@
 namespace Notificaciones;
 
 abstract class Notificacion {
-    //esto es una forma
-    //function llamarNotificacion($contenido);
+
     /**
      *
      * @param string $estadoNotificacion
